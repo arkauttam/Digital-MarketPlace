@@ -30,7 +30,7 @@ const Navbar = () => {
                   {user ? null : <Link to={"/sign-in"} className={buttonVariants({ variant: "ghost" })}>Sign In</Link>}
                   {user ? null : <span className="h-6 w-px bg-gray-200" aria-hidden />}
                   {user ? null : <Link to={"/sign-up"} className={buttonVariants({ variant: "ghost" })}>
-                    CreateAccount
+                    Sign Up
                   </Link>}
                   {user ? null : <span className="h-6 w-px bg-gray-200" aria-hidden />}
 
