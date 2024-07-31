@@ -4,10 +4,10 @@ import EmptyCart from './EmptyCart';
 import { Button } from './ui/button';
 import AddedProducts from './cart/AddedProducts';
 import { GlobalContext } from "@/context/GlobalContext"; // Ensure correct import path
-import { useContext } from "react";
+import React, { useContext } from 'react';
 
 const Cart = () => {
-    const { cart } = useContext(GlobalContext);
+    const { cart, removeToCart } = useContext(GlobalContext);
 
     return (
         <Sheet>
@@ -31,6 +31,7 @@ const Cart = () => {
                                     productName={product.title}
                                     features={["ui-kit", "landing page", "admin dashboard"]}
                                     price={product.price}
+                                    onRemove={() => removeToCart(product)}
                                 />
                             ))}
                         </div>

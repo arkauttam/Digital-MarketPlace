@@ -15,12 +15,18 @@ const ContextProvider = ({ children }) => {
         // toast.success('Added to cart');
 
     };
-
+    const removeToCart = (product)=>{
+        const newCart = cart.filter((item)=>item.id !== product.id);
+        setCart(newCart);
+        localStorage.setItem("cart" , JSON.stringify(newCart));
+    
+    }
 
     return (
         <GlobalContext.Provider value={{
             cart,
-            addToCart
+            addToCart,
+            removeToCart
          }}>
             {children}
         </GlobalContext.Provider>
